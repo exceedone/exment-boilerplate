@@ -28,6 +28,13 @@ directories is what gets tested.
   specific admin-core revision, place that revision in `./exment-admin-core`
   before running `composer install`.
 
+  `master` on purpose, not the `v1.0.0` tag: the tag predates
+  `feat: load package migrations to enable migration without prior publishing`,
+  which `artisan exment:inittest` needs to create the `admin_*` tables. The
+  trade-off is that CI follows whatever admin-core `master` happens to be — once
+  a tag containing that commit exists, this can become an ordinary versioned
+  dependency instead.
+
 ## Which boilerplate branch to use
 
 | exment branch under test | boilerplate branch |
