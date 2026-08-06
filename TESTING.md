@@ -35,24 +35,47 @@ directories is what gets tested.
 | `master` (Laravel 10)    | `main`             |
 | `feature/laravel-12`     | `feature/laravel-12` |
 
-## Temporary workflow lines to remove before merging into master
+## The exment `feature/laravel-12-test-ga` branch
 
-While exment `feature/laravel-12` is not merged yet, its workflows have to pin
-this repository's `feature/laravel-12` branch. For that purpose the exment
-branch `feature/laravel-12-test-ga` adds the following line (plus its TODO
-comment) to the `exment-boilerplate` checkout step of
-`.github/workflows/unittest.yml`, `.github/workflows/phpstan.yml` and
-`.github/workflows/check-lang.yml`:
+CI for Laravel 12 was verified through the throwaway exment branch
+`feature/laravel-12-test-ga` (= `feature/laravel-12` + the changes below). It
+carries two kinds of change, and only one of them is temporary.
+
+### Temporary — delete before merging into master
+
+The `exment-boilerplate` checkout step of `.github/workflows/unittest.yml`,
+`.github/workflows/phpstan.yml` and `.github/workflows/check-lang.yml` pins this
+repository's branch:
 
 ```yaml
-          ref: feature/laravel-12   # <- REMOVE before merging into master
+          # ===== TEMPORARY: remove from here down to "END TEMPORARY" before merging into master =====
+          # ...
+          ref: feature/laravel-12
+          # ===== END TEMPORARY =====
 ```
 
-Merge order when releasing Laravel 12 support:
+Without it the workflows check out this repository's default branch `main`,
+which still ships the Laravel 10 files, and `artisan package:discover` fails
+with `Class "ExmentAdminCore\Admin\AdminServiceProvider" not found`.
+
+Also temporary: `.github/LARAVEL12-TEST-NOTES.md` in the exment repository.
+
+### Not temporary — port to `feature/laravel-12`
+
+Commit `fix(phpstan): point at larastan v3 and ship the baseline` is a real fix
+and must be cherry-picked onto exment `feature/laravel-12`:
+
+- `phpstan.neon.dist` includes `./vendor/larastan/larastan/extension.neon`
+  instead of the abandoned `./vendor/nunomaduro/larastan/extension.neon`.
+- the `setup phpstan` step of `.github/workflows/phpstan.yml` also copies
+  `phpstan-baseline.neon` to the application root, because PHPStan resolves
+  relative paths against the directory of the config file.
+
+### Merge order when releasing Laravel 12 support
 
 1. Merge this repository's `feature/laravel-12` into `main`.
-2. In the exment repository, delete every `ref: feature/laravel-12` line (and
-   its TODO comment) from the three workflow files above.
+2. Cherry-pick the phpstan commit onto exment `feature/laravel-12`; do **not**
+   carry over the `TEMPORARY` blocks or `LARAVEL12-TEST-NOTES.md`.
 3. Merge exment `feature/laravel-12` into `master`.
 
 ## Ghi chú (Tiếng Việt)
@@ -64,9 +87,21 @@ Merge order when releasing Laravel 12 support:
 - `./exment-admin-core`: nếu thư mục chưa tồn tại, script
   `scripts/ensure-exment-admin-core.php` sẽ tự `git clone` nhánh `master` khi
   chạy `composer install`.
-- Trước khi merge exment `feature/laravel-12` vào `master`, PHẢI làm theo thứ
-  tự:
+- Nhánh `feature/laravel-12-test-ga` của repo exment chỉ để test CI, **không
+  merge vào `master`**. Nhánh đó chứa 2 loại thay đổi:
+
+  **Tạm thời — phải xoá trước khi merge vào `master`:**
+  1. Khối `ref: feature/laravel-12` (nằm giữa 2 dòng `TEMPORARY` và
+     `END TEMPORARY`) trong 3 file workflow `unittest.yml`, `phpstan.yml`,
+     `check-lang.yml`.
+  2. File `.github/LARAVEL12-TEST-NOTES.md`.
+
+  **Không tạm thời — phải cherry-pick sang `feature/laravel-12`:** commit
+  `fix(phpstan): point at larastan v3 and ship the baseline`, gồm sửa
+  `phpstan.neon.dist` trỏ sang `./vendor/larastan/larastan/extension.neon` và
+  bước `setup phpstan` copy thêm `phpstan-baseline.neon`.
+
+- Thứ tự khi phát hành Laravel 12:
   1. Merge nhánh `feature/laravel-12` của repo này vào `main`.
-  2. Xoá các dòng `ref: feature/laravel-12` (kèm comment TODO) trong 3 file
-     workflow của exment: `unittest.yml`, `phpstan.yml`, `check-lang.yml`.
+  2. Cherry-pick commit phpstan ở trên sang exment `feature/laravel-12`.
   3. Merge exment `feature/laravel-12` vào `master`.
