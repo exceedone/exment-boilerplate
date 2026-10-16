@@ -33,6 +33,7 @@
         "league/flysystem-azure-blob-storage": "^3.28",
         "league/flysystem-ftp": "^3.28",
         "league/flysystem-sftp-v3": "^3.28",
+        "meilisearch/meilisearch-php": "^1.10",
         "mews/purifier": "^3.4",
         "myclabs/php-enum": "^1.8",
         "phpoffice/phpspreadsheet": "^1.29",
@@ -119,7 +120,8 @@
     ],
     "config": {
         "allow-plugins": {
-            "kylekatarnls/update-helper": true
+            "kylekatarnls/update-helper": true,
+            "php-http/discovery": true
         }
     }
 }
