@@ -5,28 +5,27 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "ext-ldap": "*",
         "aacotroneo/laravel-saml2": "2.1",
         "composer/composer": "^2.7",
-        "dms/phpunit-arraysubset-asserts": "^0.5.0",
         "doctrine/dbal": "^4.1",
-        "elibyy/tcpdf-laravel": "^11.4",
+        "elibyy/tcpdf-laravel": "^13.0",
         "exceedone/exment": "dev-master",
-        "exceedone/exment-admin-core": "dev-master",
+        "exceedone/exment-admin-core": "dev-master as 1.0.1",
         "exment-git/spout": "^4.0",
         "guzzlehttp/guzzle": "^7.8",
-        "illuminate/support": "^12.0",
+        "illuminate/support": "^13.0",
         "intervention/image": "^2.7",
         "kylekatarnls/update-helper": "^1.2",
         "laravel/browser-kit-testing": "^7.2",
-        "laravel/framework": "^12.0",
+        "laravel/framework": "^13.0",
         "laravel/helpers": "^1.7",
-        "laravel/passport": "^12.4",
-        "laravel/sanctum": "^4.0",
+        "laravel/passport": "^13.0",
+        "laravel/sanctum": "^4.3.1",
         "laravel/slack-notification-channel": "^3.0",
         "laravel/socialite": "^5.20",
-        "laravel/tinker": "^2.10",
+        "laravel/tinker": "^3.0",
         "laravel/ui": "^4.6",
         "lcobucci/jwt": "^5.1",
         "league/flysystem-aws-s3-v3": "^3.28",
@@ -41,8 +40,8 @@
         "pragmarx/google2fa": "^8.0",
         "simplesoftwareio/simple-qrcode": "^2.0.0",
         "spatie/flysystem-dropbox": "^3.0",
-        "symfony/css-selector": "^7.0",
-        "symfony/dom-crawler": "^7.0",
+        "symfony/css-selector": "^7.0|^8.0",
+        "symfony/dom-crawler": "^7.0|^8.0",
         "webpatser/laravel-uuid": "^4.0"
     },
     "require-dev": {
@@ -52,7 +51,7 @@
         "laravel/pint": "^1.18",
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6.10",
-        "phpunit/phpunit": "^10.5",
+        "phpunit/phpunit": "^12.5",
         "spatie/laravel-ignition": "^2.9"
     },
     "autoload": {
@@ -114,11 +113,17 @@
             "type": "path",
             "url": "./exment",
             "options": {
-                "symlink": true
+                "symlink": true,
+                "versions": {
+                    "exceedone/exment": "dev-master"
+                }
             }
         }
     ],
     "config": {
+        "platform": {
+            "php": "8.3.0"
+        },
         "allow-plugins": {
             "kylekatarnls/update-helper": true,
             "php-http/discovery": true
