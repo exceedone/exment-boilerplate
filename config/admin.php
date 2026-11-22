@@ -58,7 +58,9 @@ return [
     */
     'route' => [
 
-        'prefix' => env('ADMIN_ROUTE_PREFIX', 'admin'),
+        // Empty (the default from Exment 7.2.1): the pages are at the root, e.g. /data/....
+        // A site installed before keeps "admin" in its own .env or config (/admin/data/...).
+        'prefix' => env('ADMIN_ROUTE_PREFIX', ''),
 
         'namespace' => 'App\\Admin\\Controllers',
 
