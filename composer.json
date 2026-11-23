@@ -39,7 +39,6 @@
         "phpoffice/phpspreadsheet": "^1.29",
         "phpseclib/phpseclib": "^3.0",
         "pragmarx/google2fa": "^8.0",
-        "simplesoftwareio/simple-qrcode": "^2.0.0",
         "spatie/flysystem-dropbox": "^3.0",
         "symfony/css-selector": "^7.0",
         "symfony/dom-crawler": "^7.0",
