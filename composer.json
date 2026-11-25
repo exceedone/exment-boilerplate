@@ -5,27 +5,54 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^8.0.2",
-        "dms/phpunit-arraysubset-asserts": "~0.1",
-        "exceedone/exment": "dev-master",
-        "fideloper/proxy": "^4.4",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^7.2",
-        "laravel/browser-kit-testing": "~6.2",
-        "laravel/framework": "^9.19",
-        "laravel/sanctum": "^2.14.1",
-        "laravel/tinker": "^2.7",
-        "laravel/ui": "^3.0",
-        "symfony/css-selector": "~5.2"
+        "php": "^8.2",
+        "ext-ldap": "*",
+        "aacotroneo/laravel-saml2": "2.1",
+        "composer/composer": "^2.7",
+        "dms/phpunit-arraysubset-asserts": "^0.5.0",
+        "doctrine/dbal": "^4.1",
+        "elibyy/tcpdf-laravel": "^11.4",
+        "exceedone/exment": "^7.0",
+        "exceedone/exment-admin-core": "^1.0",
+        "exment-git/spout": "^4.0",
+        "guzzlehttp/guzzle": "^7.8",
+        "illuminate/support": "^12.0",
+        "intervention/image": "^2.7",
+        "kylekatarnls/update-helper": "^1.2",
+        "laravel/browser-kit-testing": "^7.2",
+        "laravel/framework": "^12.0",
+        "laravel/helpers": "^1.7",
+        "laravel/passport": "^12.4",
+        "laravel/sanctum": "^4.0",
+        "laravel/slack-notification-channel": "^3.0",
+        "laravel/socialite": "^5.20",
+        "laravel/tinker": "^2.10",
+        "laravel/ui": "^4.6",
+        "lcobucci/jwt": "^5.1",
+        "league/flysystem-aws-s3-v3": "^3.28",
+        "league/flysystem-azure-blob-storage": "^3.28",
+        "league/flysystem-ftp": "^3.28",
+        "league/flysystem-sftp-v3": "^3.28",
+        "meilisearch/meilisearch-php": "^1.10",
+        "mews/purifier": "^3.4",
+        "myclabs/php-enum": "^1.8",
+        "phpoffice/phpspreadsheet": "^1.29",
+        "phpseclib/phpseclib": "^3.0",
+        "pragmarx/google2fa": "^8.0",
+        "spatie/flysystem-dropbox": "^3.0",
+        "symfony/css-selector": "^7.0",
+        "symfony/dom-crawler": "^7.0",
+        "webpatser/laravel-uuid": "^4.0"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^1.0",
-        "fakerphp/faker": "^1.9.1",
-        "laravel/pint": "^1.0",
-        "laravel/sail": "^1.0.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10"
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "fakerphp/faker": "^1.23",
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.18",
+        "laravel/sail": "^1.41",
+        "mockery/mockery": "^1.6.10",
+        "phpunit/phpunit": "^10.5",
+        "spatie/laravel-ignition": "^2.9"
     },
     "autoload": {
         "psr-4": {
@@ -80,7 +107,8 @@
     },
     "config": {
         "allow-plugins": {
-            "kylekatarnls/update-helper": true
+            "kylekatarnls/update-helper": true,
+            "php-http/discovery": true
         }
     }
 }

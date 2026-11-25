@@ -12,7 +12,7 @@
         "doctrine/dbal": "^4.1",
         "elibyy/tcpdf-laravel": "^13.0",
         "exceedone/exment": "dev-master",
-        "exceedone/exment-admin-core": "dev-master as 1.0.1",
+        "exceedone/exment-admin-core": "dev-master as 1.0.6",
         "exment-git/spout": "^4.0",
         "guzzlehttp/guzzle": "^7.8",
         "illuminate/support": "^13.0",
@@ -38,7 +38,6 @@
         "phpoffice/phpspreadsheet": "^1.29",
         "phpseclib/phpseclib": "^3.0",
         "pragmarx/google2fa": "^8.0",
-        "simplesoftwareio/simple-qrcode": "^2.0.0",
         "spatie/flysystem-dropbox": "^3.0",
         "symfony/css-selector": "^7.0|^8.0",
         "symfony/dom-crawler": "^7.0|^8.0",
@@ -117,6 +116,13 @@
                 "versions": {
                     "exceedone/exment": "dev-master"
                 }
+            }
+        },
+        {
+            "type": "path",
+            "url": "./exment-admin-core",
+            "options": {
+                "symlink": true
             }
         }
     ],
