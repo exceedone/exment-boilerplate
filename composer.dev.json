@@ -13,7 +13,7 @@
         "doctrine/dbal": "^4.1",
         "elibyy/tcpdf-laravel": "^11.4",
         "exceedone/exment": "dev-master",
-        "exceedone/exment-admin-core": "dev-master as 1.0.5",
+        "exceedone/exment-admin-core": "dev-master as 1.0.6",
         "exment-git/spout": "^4.0",
         "guzzlehttp/guzzle": "^7.8",
         "illuminate/support": "^12.0",

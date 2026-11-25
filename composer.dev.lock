@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b96ced85c158f6ce0c63162c018cd19f",
+    "content-hash": "d40ca38e9694ddfa509cf12913836519",
     "packages": [
         {
             "name": "aacotroneo/laravel-saml2",
@@ -14337,8 +14337,8 @@
         {
             "package": "exceedone/exment-admin-core",
             "version": "9999999-dev",
-            "alias": "1.0.5",
-            "alias_normalized": "1.0.5.0"
+            "alias": "1.0.6",
+            "alias_normalized": "1.0.6.0"
         }
     ],
     "minimum-stability": "dev",
