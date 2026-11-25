@@ -88,23 +88,23 @@
             "@php artisan exment:inittest --yes"
         ],
         "exment:test:browser": [
-            "@composer run exment:test:init",
             "Composer\\Config::disableProcessTimeout",
+            "@composer run exment:test:init",
             "phpunit ./vendor/exceedone/exment/tests/Browser"
         ],
         "exment:test:feature": [
-            "@composer run exment:test:init",
             "Composer\\Config::disableProcessTimeout",
+            "@composer run exment:test:init",
             "phpunit ./vendor/exceedone/exment/tests/Feature -d memory_limit=512M"
         ],
         "exment:test:unit": [
-            "@composer run exment:test:init",
             "Composer\\Config::disableProcessTimeout",
+            "@composer run exment:test:init",
             "phpunit ./vendor/exceedone/exment/tests/Unit"
         ],
         "exment:test": [
-            "@composer run exment:test:init",
             "Composer\\Config::disableProcessTimeout",
+            "@composer run exment:test:init",
             "phpunit ./vendor/exceedone/exment/tests"
         ]
     },
