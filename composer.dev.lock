@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53e50e112a049a7662ab56af4f2525a5",
+    "content-hash": "b986636893911497f4b3c7735c292cc1",
     "packages": [
         {
             "name": "aacotroneo/laravel-saml2",
@@ -1801,14 +1801,14 @@
             "dist": {
                 "type": "path",
                 "url": "./exment",
-                "reference": "9a397513fdf67b6a4f094e61a9c58c09803dc59c"
+                "reference": "ec4f1e7b85edaba13fd544f8e3231614c1024314"
             },
             "require": {
                 "bacon/bacon-qr-code": "^3.0",
                 "composer/composer": "^2.7",
                 "elibyy/tcpdf-laravel": "^11.4",
-                "exceedone/exment-admin-core": "^1.0.5",
-                "exceedone/exment-plugins-release": "~7.2.0",
+                "exceedone/exment-admin-core": "^2.1.1",
+                "exceedone/exment-plugins-release": "^7.2",
                 "exment-git/spout": "^4.0",
                 "kylekatarnls/update-helper": "^1.2",
                 "laravel/framework": "^12.68.0",
@@ -1835,6 +1835,7 @@
                 "spatie/phpunit-watcher": "^1.22.0"
             },
             "suggest": {
+                "aws/aws-sdk-php": "Keep the keys of the encrypted columns in AWS KMS or Secrets Manager (EXMENT_DATA_KEY_PROVIDER=aws_kms / aws_secrets_manager). Install with: composer require aws/aws-sdk-php",
                 "directorytree/ldaprecord": "Required to use the LDAP login. Install with: composer require directorytree/ldaprecord",
                 "google/recaptcha": "Required to use Google reCAPTCHA (v2 or v3) on public forms. Install with: composer require google/recaptcha",
                 "meilisearch/meilisearch-php": "Enable Meilisearch-powered global search (config('meilisearch.global_search')). Requires a guzzlehttp/guzzle compatible HTTP client."
@@ -1893,7 +1894,7 @@
             "dist": {
                 "type": "path",
                 "url": "./exment-admin-core",
-                "reference": "0d0dc3281c04a48d9ee9a9c5055c05fbe29f1091"
+                "reference": "cf1eb31212d9844de9a2a1ad1f46b0a3aa94bce4"
             },
             "require": {
                 "doctrine/dbal": "^4.1",
@@ -1916,6 +1917,9 @@
             },
             "type": "library",
             "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.0.x-dev"
+                },
                 "laravel": {
                     "providers": [
                         "ExmentAdminCore\\Admin\\AdminServiceProvider"
@@ -1936,7 +1940,8 @@
             "autoload-dev": {
                 "psr-4": {
                     "Tests\\Models\\": "tests/models",
-                    "Tests\\Controllers\\": "tests/controllers"
+                    "Tests\\Controllers\\": "tests/controllers",
+                    "Tests\\Factories\\": "tests/factories"
                 },
                 "classmap": [
                     "tests/TestCase.php"
@@ -14332,8 +14337,8 @@
         {
             "package": "exceedone/exment-admin-core",
             "version": "9999999-dev",
-            "alias": "1.0.6",
-            "alias_normalized": "1.0.6.0"
+            "alias": "2.99.0",
+            "alias_normalized": "2.99.0.0"
         }
     ],
     "minimum-stability": "dev",
